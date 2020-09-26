@@ -1,372 +1,1140 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="INTERNATIONAL SHIPPING OF VALUABLES">
-    <meta name="keywords" content="INTERNATIONAL SHIPPING OF VALUABLES">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Track Your Shipment | Oceanwave Delivery Service</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="b.png">
-    <title>Home | OCW DIPLOMATIC SHIPPING</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <style media="screen">
+
+    html, body {
+      width: 100%;
+      background-image: url("img/oceanb.jpg");
+      background-size: cover;
+
+    }
+
+
+    /****************************************************/
+    /*  My Own Style */
+    /****************************************************/
+    /*Acccount Login */
+    .loginbox{
+      padding: 50px 10px;
+      background: rgba(0,0,0,0.5);
+      width: 50%;
+      margin-top: 100px;
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+    }
+    #myinput{
+      width: 95%!important;
+    }
+    #loginbtn{
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .order-visuals{
+      text-align: center;
+    }
+
+
+    /*User Account */
+
+    #nav {
+      width: 100%;
+      text-align: right;
+
+    }
+    #myinput{
+      background: rgba(255, 255, 255, 0.5);
+      width: 240px;
+      padding-left: 5px;
+      border-radius: 5px;
+    }
+    .loader{
+      color: blue;
+      margin-top: 10px;
+    }
+    #royal, #royal-mada, #evans, #zamani, .lifestyle-account{
+      background: white;
+      padding-top: 50px;
+      width: 100%;
+      height: 1500px;
+      overflow: auto;
+
+    }
+    .firstrow,.secondrow{
+      border: 1px solid grey;
+      padding: 10px 0;
+    }
+    .secondrow{
+      margin-top: 10px;
+    }
+    .order-status {
+      border: 1px solid red;
+    }
+    .order-visuals th{
+      font-size: 100%;
+    }
+
+
+    .time-small{
+      color: grey;
+    }
+    .shipmentdetails {
+      font-size: 80%;
+      text-align: center;
+    }
+    .shipmentdetails h6 {
+      font-size: 90%;
+      text-transform: capitalize;
+    }
+    .greenlight{
+      background: green;
+    }
+    .redlight{
+      background: red;
+    }
+    .shipmentdetails p{
+      margin: 0;
+    }
+    .mapbtn{
+      cursor: pointer;
+      color: green;
+    }
+    .iframe-ship{
+      display: none;
+    }
+    .danger{
+      margin-top: 10px;
+      font-size: 80%;
+    }
+
+
+
+
+    @media only screen and (max-width: 900px) {
+      /*Acccount Login */
+      .loginbox{
+        padding: 50px 10px;
+        background: rgba(0,0,0,0.5);
+        width: 95%;
+        margin-top: 100px;
+        border-radius: 10px;
+      }
+      #myinput{
+        width: 100%!important;
+      }
+      #loginbtn{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .order-visuals th{
+        font-size: 52%;
+      }
+
+    }
+
+  </style>
+  <body>
+    <!---------------------------------------------------------------------------------------------->
+    <!--
+      Login section
+    -->
+
+    <div class="container loginbox">
+        <i class="fa fa-refresh fa-spin fa-3x fa-fw loader" aria-hidden="true"></i>
+        <br><br>
+        <div class="form-group">
+          <label for="email">Consignment Number:</label>
+          <input  type="text"  id="myinput">
+          <div class="card bg-danger text-white danger">
+              <div class="card-body">Please enter a valid number - NB: You can enter your tracking number here</div>
+            </div>
+        </div>
+      <center>
+        <button type="submit" class="btn btn-primary loginbtn" id="loginbtn">Submit</button>
+        <br>
+
+        <p><small>Can't track your shipment? <a>Contact us</a></small></p>
+        <p><small>Go back to Homepage <a href="index.html">Click here</a></small></p>
+      </center>
+
+
     </div>
 
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="img/logo.png" alt="OCW DIPLOMATIC SHIPPING">
-                </a>
-            </div>
-            <div class="top-social">
-                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                <a href="#"><i class="fa fa-youtube-play"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="container">
-                <div class="nav-menu">
-                    <nav class="mainmenu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="#about-us">About Us</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#track-shipment">Track Your Shipment</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
-    <!-- Header End -->
+    <!---------------------------------------------------------------------------------------------------------->
+    <!-- GZA GUY 31/MAY/20 -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero-section">
-        <div class="hero-items owl-carousel">
-            <div class="single-hero-item set-bg" data-setbg="img/hero-slider/hero-1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="hero-text">
-                                <h2>DELIVERY SERVICE WORLDWIDE</h2>
-                                <h1>OCW DIPLOMATIC SHIPPING</h1>
-                                <a href="payments/" class="primary-btn">CONTACT US NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-hero-item set-bg" data-setbg="img/hero-slider/hero-2.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="hero-text">
-                                <h2>Express Delivery</h2>
-                                <h1>New Tracking Technology</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-hero-item set-bg" data-setbg="img/hero-slider/hero-3.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="hero-text">
-                                <h2></h2>
-                                <h1>TRACK YOUR SHIPMENT</h1>
-                                <a href="track-shipment.htm" class="primary-btn">TRACK NOW</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero End -->
+    <div class="container-fluid" id="evans">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-shipment.htm" id="nav"><i class="fas fa-user-slash"></i> Log-out</a>
+      </nav>
+      <div class="container">
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
 
-    <!-- Feature Section Begin -->
-    <section class="feature-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4" id="services">
-                    <div class="feature-item set-bg" data-setbg="img/feature/feature-1.jpg">
-                        <h3>OCW EXPRESS</h3>
-                        <p>Our AIRFAST services have been designed for customers who need their goods delivered urgently.<br /> </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-item set-bg" data-setbg="img/feature/feature-2.jpg">
-                        <h3>PARCEL AND ECOMMERCE</h3>
-                        <p>Diplomatic delivery eCommerce provide standard domestic<br />  and international parcel pick-up, delivery and return solutions for business customers and consumers</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-item set-bg" data-setbg="img/feature/feature-3.jpg">
-                        <h3>FREIGHT TRANSPORTATION</h3>
-                        <p>With a global presence in 67 countries.  <br />OCWCargo is one of the world's largest freight forwarding companies.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Feature Section End -->
 
-    <!-- About Section Begin -->
-    <section class="home-about spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-text" id="about-us">
-                        <h2>ABOUT OCW DIPLOMATIC SHIPPING</h2>
-                        <p class="short-details">
-                        We stay professional and pragmatic, and find the best solutions! You have made the right decision to work with us
-                        </p>
-                        <p class="long-details">
-                           Deliver Environmentally Responsible Client Services <br>
-                           Provide Employees with an Attractive Working Environment <br>
-                           Be an Active Community Partner <br>
-                           Maintain High Ethical Standards <br>
-                           We Ensure Complete Security <br>
-                           Freight Security <br>
-                           Air & Ocean Cargo Insurance <br>
-                           Our Highly Efficient Customs Brokerage <br>
-                           Clearance and Complian Service <br>
-                          </p>
-                        <a href="#contact" class="primary-btn about-btn">Contact Us</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-img">
-                        <img src="img/home-about.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About Section End -->
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
 
-    <!-- Classes Section Begin -->
-    <section class="classes-section">
-        <div class="class-title set-bg" data-setbg="img/classes-title-bg.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 m-auto text-center" >
-                        <div class="section-title pl-lg-4 pr-lg-4 pl-0 pr-0">
-                            <h2 id="track-shipment">TRACK YOUR SHIPMENT</h2>
-                            <p> <a href="track-shipment.htm" class="track-btn" >TRACK SHIPMENT</a> </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Classes Section End -->
-
-    <!-- Choseus Section Begin -->
-    <section class="chooseus-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Why People Choose Us</h2>
-                        <p>Globally known for our ability to handle every last detail our customer's particular logistics and forwarding needs, OCW Diplomatic Special Services team takes care of all your logistics.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="choose-item">
-                        <img src="img/icons/chose-icon-1.png" alt="">
-                        <h5>Support 24/7</h5>
-                        <p>
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="choose-item">
-                        <img src="img/icons/chose-icon-6.png" alt="">
-                        <h5>Quick Delivery</h5>
-                        <p>
-
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="choose-item">
-                        <img src="img/icons/chose-icon-3.png" alt="">
-                        <h5>No Hassle</h5>
-                        <p>
-
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- Choseus Section End -->
+                  <th>ON-TRANSIT</th>
 
 
 
-    <!-- Cta Section Begin -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="cta-text">
-                        <h3>Get Started Today</h3>
-                        <p>Contact us now. We are willing to assist you </p>
-                    </div>
-                    <a href="#contact" id="contact"class="primary-btn cta-btn">Contact</a>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+          <div class="row firstrow">
+            <div class="col-sm-4">
+              <div class="card bg-light text-dark">
+                  <div class="card-body">
+                    <h5>Shipment Information</h5>
+                    <hr>
+                    <p><span >Tracking number:</span> <small>CA104937666666US</small></p>
+                    <p><span >Shipment date:</span> <small>12:05, June 05, 2020 </small></p>
+                    <p><span >Item(s) being shipped:</span> <small> GOLD AND DIAMOND</small></p>
+                    <p><span >Quantity:</span> <small> 50kg</small></p>
+                    <p><span >Quality:</span> <small> 22+Carat</small></p>
+                    <p><span >Purity:</span> <small> 96.3%</small></p>
+                    <!-- WARNING: <p><span >C.I.F Price:</span> <small> US$25,000.00 per kg</small></p> -->
+                    <p><span >Size:</span> <small>2tBox</small></p>
+
+                  </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Cta Section End -->
+            <div class="col-sm-8">
+              <br>
+              <br>
+              <div class="row shipmentdetails">
+                <div class="col-4">
+                  <h6>June 05, 2020</h6>
+                  <p><small class="time-small">01:00pm</small></p>
 
-    <!-- Map Section Begin -->
-    <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d237861.01419411338!2d-157.98189718309072!3d21.32767123065716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sharbour%20honolulu%20hawaii!5e0!3m2!1sen!2sgh!4v1583869218711!5m2!1sen!2sgh" width="100%" height="590" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        <div class="map-contact-detalis">
-            <div class="open-time">
-                <h5>Weekday:</h5>
-                <ul>
-                    <li>Weekday: <span>06:30 - 11:00</span></li>
-                    <li>Saturday: <span>07:00 - 22:00</span></li>
-                    <li>Sunday: <span>09:00 - 18:00</span></li>
-                </ul>
+
+                </div>
+                <div class="col-1">
+                  <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+                </div>
+                <div class="col-6">
+                  <h6> Information received for Shipment</h6>
+                  <p><small class="time-small">50kg Gold & Diamond</small> </p>
+                  <p><small class="time-small">Sans Fransisco - California </small></p>
+                </div>
+              </div>
+              <hr class="greenlight">
+              <div class="row shipmentdetails">
+                <div class="col-4">
+                  <h6>June 05, 2020</h6>
+                  <p><small class="time-small">06:20pm</small></p>
+
+
+                </div>
+                <div class="col-1">
+                  <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+                </div>
+                <div class="col-6">
+                  <h6> Consignment en route to Phoenix Arizona </h6>
+                  <p><small class="time-small">50kg Gold & Diamond</small> </p>
+                  <p><small class="time-small">Phoenix Arizona, United States </small></p>
+                </div>
+              </div>
+              <hr class="greenlight">
+
+              <div class="row shipmentdetails">
+                <div class="col-4">
+                  <h6>June 06, 2020</h6>
+                  <p><small class="time-small">10:30am</small></p>
+
+
+                </div>
+                <div class="col-1">
+                  <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+                </div>
+                <div class="col-6">
+                  <h6> Arrived at Phoenix Arizona Hub</h6>
+                  <p><small class="time-small">50kg Gold & Diamond</small> </p>
+                  <p><small class="time-small">4703 W Pasadena Ave, Glendale, AZ 85301, United States </small></p>
+
+                </div>
+              </div>
+              <hr class="greenlight">
+
+              <div class="row shipmentdetails">
+                <div class="col-4">
+                  <h6>June 09, 2020</h6>
+                  <p><small class="time-small">08:55am</small></p>
+
+
+                </div>
+                <div class="col-1">
+                  <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+                </div>
+                <div class="col-6">
+                  <h6> Arrived at Austin Texas</h6>
+                  <p><small class="time-small">50kg Gold & Diamond</small> </p>
+                  <p><small class="time-small">Orleans Harbour Condominiums, 2401 Westlake Dr, Austin, TX 78746, United States </small></p>
+                </div>
+              </div>
+              <hr class="greenlight">
+
+              <div class="row shipmentdetails">
+                <div class="col-4">
+                  <h6>June 09, 2020</h6>
+                  <p><small class="time-small">02:00</small></p>
+
+
+                </div>
+                <div class="col-1">
+                  <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+                </div>
+                <div class="col-6">
+                  <h6> In Transit to the next hub</h6>
+                  <p><small class="time-small">50kg Gold & Diamond</small> </p>
+                  <p><small class="time-small">Chesapeake, VA 23130, USA </small></p>
+                </div>
+              </div>
+              <hr class="greenlight">
+
+              <div class="row shipmentdetails">
+                <div class="col-4">
+                  <h6>June 17, 2020</h6>
+                  <p><small class="time-small">06:29pm</small></p>
+
+
+                </div>
+                <div class="col-1">
+                  <p><i style='font-size:24px; color: red;' class='fa fa-warning'></i></p>
+
+                </div>
+                <div class="col-6">
+                  <h6> Consignment Held </h6>
+                  <p><small class="time-small">50kg Gold & Diamond</small> </p>
+                  <p><small class="time-small">4 Port Terminal Blvd, Bayonne, NJ 07002, United States </small></p>
+                  <p><small class="time-small mapbtn">View on map</small></p>
+                </div>
+              </div>
+              <hr class="redlight">
+
+
             </div>
-            <div class="map-contact-form" id="contact">
-                <h5>Contact Us</h5>
-                <form action="#">
-                    <input type="text" placeholder="Name">
-                    <input type="text" class="phone" placeholder="Phone">
-                    <textarea placeholder="Message"></textarea>
-                    <button type="submit" class="site-btn">Submit Now</button>
-                </form>
+
+          </div>
+
+          <div class="container map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.423924328119!2d-74.07437368459652!3d40.66462747933702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25036a072a74d%3A0xf88fd20c29c0071f!2sCape%20Liberty%20Cruise%20Port!5e0!3m2!1sen!2sgh!4v1592354307712!5m2!1sen!2sgh" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+
+          <div class="row secondrow">
+            <div class="col-sm-6">
+              <div class="card bg-light text-dark">
+                  <div class="card-body">
+                    <h5>Sender Information</h5>
+                    <hr>
+                    <p><span >Sender Name:</span> <small>Fernandez, Paul </small></p>
+                    <p><span >Sender Location:</span> <small>San Fransisco, California</small></p>
+                    <p><span >Sender Contact Number:</span> <small>  4475 3718 4881 </small></p>
+                    <p><span >Sender Email:</span> <small> paulfernandez090@outlook.com</small></p>
+                  </div>
+                </div>
             </div>
-        </div>
+
+            <div class="col-sm-6">
+              <div class="card bg-light text-dark">
+                  <div class="card-body">
+                    <h5>Receiver Information</h5>
+                    <hr>
+                    <p><span >Receiver Name:</span> <small>Adams, Penelope</small></p>
+                    <p><span >Receiver Location:</span> <small>Flat 1, 6 Queens Avenue, London N10 3NR</small></p>
+                    <p><span >Receiver Contact Number:</span> <small>4475 3718 4881</small></p>
+                    <p><span >Receiver Email:</span> <small>pennya@icloud.com</small></p>  <!-- WARNING: 1 -->
+
+                  </div>
+                </div>
+            </div>
+          </div>
+
+      </div>
     </div>
-    <!-- Map Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer-logo-item">
-                        <div class="f-logo">
-                            <a href="#"><img src="img/logo.png" alt=""></a>
-                        </div>
-                        <p>
-                          Globally known for our ability to handle every last
-                          detail our customer's particular logistics and
-                          forwarding needs, OCW Diplomatic Shipping team
-                          takes care of all your logistics
-                        </p>
-                        <div class="social-links">
-                            <h6>Follow us</h6>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="footer-widget">
-                        <h5>Services</h5>
-                        <ul class="workout-program">
-                            <li><a>Cargo Insurance</a></li>
-                            <li><a>Car Transportation</a></li>
-                            <li><a>Multimodal Transportation</a></li>
-                            <li><a>Road Freight</a></li>
-                            <li><a>Sea Freight</a></li>
-                            <li><a>Air Freight</a></li>
-                            <li><a>Freight Forwarding</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="footer-widget" id="contact">
-                        <h5>Get Info</h5>
-                        <ul class="footer-info">
-                            <li>
-                                <i class="fa fa-phone"></i>
-                                <span>Phone:</span>
-                                (+1) (347) 354-0277
-                            </li>
-                            <li>
-                                <i class="fa fa-envelope-o"></i>
-                                <span>Email:</span>
-                                contact@ocwdiplomaticshipping.com
-                            </li>
-                            <li>
-                                <i class="fa fa-map-marker"></i>
-                                <span>Location</span>
-                                Honolulu - Hawaii
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <!--GZA GUY 31/MAY/20------------------------------------------------------------------------------------------------>
+
+    <!-- WARNING: zamani -->
+    <div class="container-fluid" id="zamani">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-shipment.htm" id="nav"><i class="fas fa-user-slash"></i> Log-out</a>
+      </nav>
+      <div class="container" >
+
+
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
+
+                  <!--
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
+
+                  <th>ON-TRANSIT</th>
+                -->
+
+
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+      <div class="row firstrow">
+        <div class="col-sm-4">
+          <div class="card bg-light text-dark">
+            <div class="card-body">
+              <h5>Shipment Information</h5>
+              <hr>
+              <p><span >Tracking number:</span> <small>AUS04937369520US</small></p>
+              <p><span >Shipment date:</span> <small>12:05, June 05, 2020 </small></p>
+              <p><span >Item(s) being shipped:</span> <small> GOLD</small></p>
+              <p><span >Quantity:</span> <small> 17.5kg</small></p>
+              <p><span >Quality:</span> <small> 22+Carat</small></p>
+              <p><span >Purity:</span> <small> 96.3%</small></p>
+              <!-- WARNING: <p><span >C.I.F Price:</span> <small> US$25,000.00 per kg</small></p> -->
+              <p><span >Size:</span> <small>2tBox</small></p>
+
+            </div>
             </div>
         </div>
-        <div class="copyright-text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="ct-inside"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                          <!-- WARNING:
-                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+        <div class="col-sm-8">
+          <br>
+          <br>
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>June 05, 2020</h6>
+              <p><small class="time-small">01:00pm</small></p>
 
-                         -->
-                        </div>
-                    </div>
-                </div>
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Information received for Shipment</h6>
+              <p><small class="time-small">50kg Gold & Diamond</small> </p>
+              <p><small class="time-small">Sans Fransisco - California </small></p>
+            </div>
+          </div>
+          <hr class="greenlight">
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>June 05, 2020</h6>
+              <p><small class="time-small">06:20pm</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Consignment en route to Phoenix Arizona </h6>
+              <p><small class="time-small">50kg Gold & Diamond</small> </p>
+              <p><small class="time-small">Phoenix Arizona, United States </small></p>
+            </div>
+          </div>
+          <hr class="greenlight">
+
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>June 06, 2020</h6>
+              <p><small class="time-small">10:30am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Arrived at Phoenix Arizona Hub</h6>
+              <p><small class="time-small">50kg Gold & Diamond</small> </p>
+              <p><small class="time-small">4703 W Pasadena Ave, Glendale, AZ 85301, United States </small></p>
+
+            </div>
+          </div>
+          <hr class="greenlight">
+
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>June 09, 2020</h6>
+              <p><small class="time-small">08:55am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Arrived at Austin Texas</h6>
+              <p><small class="time-small">50kg Gold & Diamond</small> </p>
+              <p><small class="time-small">Orleans Harbour Condominiums, 2401 Westlake Dr, Austin, TX 78746, United States </small></p>
+            </div>
+          </div>
+          <hr class="greenlight">
+
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>June 09, 2020</h6>
+              <p><small class="time-small">02:00</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> In Transit to the next hub</h6>
+              <p><small class="time-small">50kg Gold & Diamond</small> </p>
+              <p><small class="time-small">Chesapeake, VA 23130, USA </small></p>
+            </div>
+          </div>
+          <hr class="greenlight">
+
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>June 17, 2020</h6>
+              <p><small class="time-small">06:29pm</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px; color: red;' class='fa fa-warning'></i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Consignment Held </h6>
+              <p><small class="time-small">17.5kg  Gold</small> </p>
+              <p><small class="time-small">3 Yamba Rd, Yamba NSW 2464, Australia</small></p>
+              <p><small class="time-small mapbtn">View on map</small></p>
+            </div>
+          </div>
+          <hr class="redlight">
+
+
+        </div>
+
+      </div>
+      <div class="container map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3474.763062162749!2d153.3467223151009!3d-29.43572068210789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9a4dd5b8d85801%3A0x950df61459d6d66!2sPort%20of%20Yamba%20Yacht%20Club!5e0!3m2!1sen!2sus!4v1601141522054!5m2!1sen!2sus" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+
+      <div class="row secondrow">
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Sender Information</h5>
+                <hr>
+                <p><span >Sender Name:</span> <small>Colton Thomas (Kelvin Colton)</small></p>
+                <p><span >Sender Location:</span> <small>USA</small></p>
+                <p><span >Sender Contact Number:</span> <small>***2362</small></p>
+                <p><span >Sender Email:</span> <small>coltonthomas6@gmail.com</small></p>
+              </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer Section End -->
 
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/main.js"></script>
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Receiver Information</h5>
+                <hr>
+                <p><span >Receiver Name:</span> <small>Deloris Rodgers</small></p>
+                <p><span >Receiver Location:</span> <small>2397 Gieke Ridge Road Oak hill Ohio 45656</small></p>
+                <p><span >Receiver Contact Number:</span> <small>***7324</small></p>
+                <p><span >Receiver Email:</span> <small>delorispackrodgers96@gmail.com</small></p>  <!-- WARNING: 1 -->
 
-    <script type="text/javascript" src="payments/js/mine.js"></script>
-</body>
+              </div>
+            </div>
+        </div>
 
+
+      </div>
+
+      </div>
+    </div>
+    <!-- WARNING:\\ zamani -->
+
+    <!---------------------------------------------------------------------------------------------->
+    <!--
+      User account track OSA
+    -->
+    <div class="container-fluid" id="royal">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-shipment.htm" id="nav"><i class="fas fa-user-slash"></i>Log-out</a>
+      </nav>
+      <div class="container" >
+
+
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
+
+
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
+
+                  <th>ON-TRANSIT</th>
+
+
+
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+      <div class="row firstrow">
+        <div class="col-sm-4">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Shipment Information</h5>
+                <hr>
+                <p><span >Tracking number:</span> <small>GH04937369522US</small></p>
+                <p><span >Shipment date:</span> <small>10:05, August 30, 2019 </small></p>
+                <p><span >Item(s) being shipped:</span> <small> Alluvial Gold</small></p>
+                <p><span >Size:</span> <small>370kg</small></p>
+
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+          <br>
+          <br>
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>August 30, 2019</h6>
+              <p><small class="time-small">8:15am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Information received for Shipment</h6>
+              <p><small class="time-small">370Kg Alluvial Gold Bar</small> </p>
+              <p><small class="time-small">34VR+R9 Tema Harbour - Ghana</small></p>
+            </div>
+
+
+
+          </div>
+          <hr class="greenlight">
+
+          <div class="row shipmentdetails">
+            <div class="col-4">
+              <h6>September 02, 2019</h6>
+              <p><small class="time-small">7:06am</small></p>
+
+
+            </div>
+            <div class="col-1">
+              <p><i style='font-size:24px' class='fas'>&#xf482;</i></p>
+
+            </div>
+            <div class="col-6">
+              <h6> Package placed on transit</h6>
+              <p><small class="time-small">370kg Alluvial Gold Bar </small> </p>
+              <p><small class="time-small">34VR+R9 Tema Harbour - Ghana</small></p>
+              <p><small class="time-small mapbtn">View on map</small></p>
+            </div>
+
+
+
+          </div>
+          <hr class="greenlight">
+
+
+        </div>
+
+      </div>
+
+
+      <div class="row secondrow">
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Sender Information</h5>
+                <hr>
+                <p><span >Sender Name:</span> <small>Frank Adams</small></p>
+                <p><span >Sender Location:</span> <small>Ghana</small></p>
+                <p><span >Sender Contact Number:</span> <small>0560573601</small></p>
+                <p><span >Sender Email:</span> <small>adamfrank830@gmail.com</small></p> <!-- WARNING: 1 -->
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card bg-light text-dark">
+              <div class="card-body">
+                <h5>Receiver Information</h5>
+                <hr>
+                <p><span >Receiver Name:</span> <small>Robert Kocis </small></p>
+                <p><span >Receiver Location:</span> <small>55 Boca Chica Road Lot 82 Key West,FL 33040</small></p>
+                <p><span >Receiver Contact Number:</span> <small>+1 (305) 240-0070</small></p>
+                <p><span >Receiver Email:</span> <small>kocisrobert@aol.com</small></p>
+
+              </div>
+            </div>
+        </div>
+
+        <div class="container map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31764.39469114353!2d-0.0008429320480864417!3d5.633332938638418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x102078b84e1be8eb%3A0x51be0a7fbca0d94a!2sTema%20Harbour!5e0!3m2!1sen!2sgh!4v1567387133895!5m2!1sen!2sgh" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <!--\  USER AC  -->
+
+    <!-- \\\\ END OF OSA -->
+
+
+
+
+    <!---------------------------------------------------------------------------------------------->
+    <!--
+      User account track ICE
+    -->
+    <div class="container-fluid" id="royal-mada">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-shipment.htm" id="nav"><i class="fas fa-user-slash"></i> Log-out</a>
+      </nav>
+      <div class="container" >
+
+
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
+
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
+                  <th>  ON-TRANSIT </th>
+
+
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+        <div class="row firstrow">
+          <div class="col-sm-4">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5>Shipment Information <span class="badge">1</span></h5>
+                  <hr>
+                  <p><span  style="font-weight: bold;">Tracking number:</span> <small>DEN4937369890USA</small></p>
+                  <p><span style="font-weight: bold;" >Shipment date:</span> <small>05:23, FEBRUARY 22 2020</small></p>
+                  <p><span style="font-weight: bold;" >Shipment delivery date:</span> <small>09:15, FEBRUARY 25 2020</small></p>
+                  <p><span  style="font-weight: bold;">Item(s) being shipped:</span> <small>DIAMOND</small></p>
+                  <p><span  style="font-weight: bold;">Size:</span> <small>1tbOX*</small></p>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-8">
+            <br>
+            <br>
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>February 21, 2020</h6>
+                <p><small class="time-small">8:06am</small></p>
+
+
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Information received for Shipment</h6>
+                <p><small class="time-small">1tBox* Diamond</small> </p>
+                <p><small class="time-small">Port of Copenhagen, Københavns Havn</small></p>
+              </div>
+            </div>
+            <hr class="greenlight">
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>February 22, 2020</h6>
+                <p><small class="time-small">10:30am</small></p>
+
+
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Package Placed On Transit To The Next Hub</h6>
+                <p><small class="time-small">1tBox* Diamond</small> </p>
+                <p><small class="time-small">Port of Copenhagen, Københavns Havn</small></p>
+              </div>
+            </div>
+            <hr class="greenlight">
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>February 23, 2020</h6>
+                <p><small class="time-small">05:30pm</small></p>
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Consignment En Route To Port of Rotterdam</h6>
+                <p><small class="time-small">1tBox* Diamond</small> </p>
+                <p><small class="time-small">Wilhelminakade 909, 3072 AP Rotterdam, Netherlands</small></p>
+              </div>
+            </div>
+            <hr class="greenlight">
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>February 24, 2020</h6>
+                <p><small class="time-small">09:00</small></p>
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Clearance by Postal for customs inspection (N)</h6>
+                <p><small class="time-small">1tBox* Diamond</small> </p>
+                <p><small class="time-small">Wilhelminakade 909, 3072 AP Rotterdam, Netherlands</small></p>
+                <p><small class="time-small mapbtn">View on map</small></p>
+              </div>
+            </div>
+            <hr class="greenlight">
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6 style="color: red;">February 24, 2020</h6>
+                <p><small class="time-small">9:30</small></p>
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px; color:red;' class='fa fa-warning'></i></p>
+
+              </div>
+              <div class="col-6">
+                <h6 style="color: red;"> Consignment Held By Customs (F)</h6>
+                <p><small class="time-small">1tBox* Diamond</small> </p>
+                <p><small class="time-small">Wilhelminakade 909, 3072 AP Rotterdam, Netherlands</small></p>
+                <p><small class="time-small mapbtn">View on map</small></p>
+              </div>
+            </div>
+            <hr class="redlight">
+          </div>
+
+        </div>
+        <div class="container map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.5993951251703!2d4.482362815324773!3d51.904774489392146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c43364d44f9f39%3A0xc5831d410339551e!2sPort%20of%20Rotterdam!5e0!3m2!1sen!2sgh!4v1582582275901!5m2!1sen!2sgh" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+
+
+        <div class="row secondrow">
+          <div class="col-sm-6">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5>SENDER INFORMATION</h5>
+                  <hr>
+                  <p><span style="font-weight: bold;">Sender Name:</span> <small>ROBERTO DE LUCA</small></p>
+                  <p><span style="font-weight: bold;">Sender Location:</span> <small>DENMARK</small></p>
+                  <p><span style="font-weight: bold;">Sender Contact Number:</span> <small>***4001</small></p>
+                  <p><span style="font-weight: bold;">Sender Email:</span> <small>ROBERTODE234@GMAIL.COM</small></p>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5 style="font-weight: bold;">RECEIVER INFORMATION</h5>
+                  <hr>
+                  <p><span style="font-weight: bold;">Receiver Name:</span> <small>SUSAN DIANNE WARD</small></p>
+                  <p><span style="font-weight: bold;">Receiver Location:</span> <small>1800 VOLLEY LANE HARKER HEIGHTS, TX 76548</small></p>
+                  <p><span style="font-weight: bold;">Receiver Contact Number:</span> <small>***7167</small></p>
+                  <p><span style="font-weight: bold;">Receiver Email:</span> <small>DWARD4844@GMAIL.COM</small></p>
+
+                </div>
+              </div>
+          </div>
+
+
+        </div>
+        <hr>
+
+
+
+      </div>
+
+
+
+    </div>
+
+    <!--\  USER AC  -->
+
+    <!-- \\\\ END OF ICE -->
+
+    <!-- WARNING: CASTYMAN -->
+    <div class="container-fluid lifestyle-account" id="castyman">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" >
+        <a href="track-shipment.htm" id="nav"><i class="fas fa-user-slash"></i> Log-out</a>
+      </nav>
+      <div class="container" >
+
+
+        <center>
+          <table class="table table-sm">
+              <thead>
+                <tr class="order-visuals">
+                  <th>ACCEPTED</th>
+                  <!-- TODO: Hide these castman-warn -->
+                  <th><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:green"></i></th>
+                  <th>ON-TRANSIT</th>
+
+
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                  <th style="color:white"><i class="fas fa-long-arrow-alt-right" style="font-size:18px;color:white"></i></th>
+                  <th style="color:white">Email</th>
+                </tr>
+              </thead>
+
+            </table>
+         </center>
+
+        <div class="row firstrow">
+          <div class="col-sm-4">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5>Shipment Information <span class="badge">1</span></h5>
+                  <hr>
+                  <p><span  style="font-weight: bold;">Tracking number:</span> <small>GER0007369890US</small></p>
+                  <p><span style="font-weight: bold;" >Shipment date:</span> <small>12:23, October 02 2019</small></p>
+                  <p><span style="font-weight: bold;" >Shipment delivery date:</span> <small>09:15, November 25 2019</small></p>
+                  <p><span  style="font-weight: bold;">Item(s) being shipped:</span> <small>DIAMOND</small></p>
+                  <p><span  style="font-weight: bold;">Size:</span> <small>1BOX*</small></p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-8">
+            <br>
+            <br>
+            <div class="row shipmentdetails">
+              <div class="col-4">
+                <h6>October 01, 2019</h6>
+                <p><small class="time-small">8:06am</small></p>
+
+
+              </div>
+              <div class="col-1">
+                <p><i style='font-size:24px' class='fas'>&#xf46d;</i></p>
+
+              </div>
+              <div class="col-6">
+                <h6> Information received for Shipment</h6>
+                <p><small class="time-small">1BOX - DIAMOND</small> </p>
+                <p><small class="time-small">Humburg Hafen - Berlin</small></p>
+                <p><small class="time-small mapbtn">View on map</small></p>
+              </div>
+
+
+
+            </div>
+            <hr class="greenlight">
+
+
+          </div>
+
+        </div>
+        <div class="container map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d151807.03047830737!2d9.82539454430774!3d53.522412878138965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b184876a599be7%3A0x928d4aacd4e8f95e!2sPort%20of%20Hamburg!5e0!3m2!1sen!2sgh!4v1570506770149!5m2!1sen!2sgh" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+
+        <div class="row secondrow">
+          <div class="col-sm-6">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5>Sender Information</h5>
+                  <hr>
+                  <p><span style="font-weight: bold;">Sender Name:</span> <small>KITSON BROOKS</small></p>
+                  <p><span style="font-weight: bold;">Sender Location:</span> <small>GEORGIA, USA</small></p>
+                  <p><span style="font-weight: bold;">Sender Contact Number:</span> <small>+1(334)-219-2445</small></p>
+                  <p><span style="font-weight: bold;">Sender Email:</span> <small>***** </small></p>
+
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                  <h5 style="font-weight: bold;">Receiver Information</h5>
+                  <hr>
+                  <p><span style="font-weight: bold;">Receiver Name:</span> <small>DARRIN WRIGHT</small></p>
+                  <p><span style="font-weight: bold;">Receiver Location:</span> <small>OKLAHOMA, USA</small></p>
+                  <p><span style="font-weight: bold;">Receiver Contact Number:</span> <small>580-485-6043</small></p>
+                  <p><span style="font-weight: bold;">Receiver Email:</span> <small>darrin751@hotmail.com</small></p>
+
+                </div>
+              </div>
+          </div>
+
+
+        </div>
+
+        <hr>
+
+
+
+      </div>
+    </div>
+    <!-- WARNING: \\CASTYMAN -->
+
+
+
+
+
+
+
+    <script type="text/javascript">
+     $(".loader").hide();
+     $(".danger").hide();
+     $(".map").hide();
+     $("#royal").hide();
+     $("#evans").hide();
+     $("#zamani").hide();
+     $(".lifestyle-account").hide();
+     $("#royal-mada").hide();
+     $(".nav").hide();
+     $('#myinput').val('');
+
+
+      $("#loginbtn").click(function(){
+        //OSA ACC
+        if ($("#myinput").val() == "GH04937369522US") {  //GREEN
+          //User matched
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#royal").fadeIn('slow');
+
+          }, 5000);
+        }
+        //RASBEE
+        else if ($("#myinput").val() == "DEN4937369890USA") {  //GREEN
+
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#royal-mada").fadeIn('slow');
+
+          }, 5000);
+        }
+        // WARNING: CASTYMAN
+        else if ($("#myinput").val() == "GER0007369890US") {  //GREEN
+
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#castyman").fadeIn('slow');
+
+          }, 5000);
+        }
+        else if ($("#myinput").val() == "CA104937666666US") { //GZA GUY
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#evans").fadeIn('slow');
+
+          }, 5000);
+        }
+        else if ($("#myinput").val() == "AUS04937369520US") { //new bronze user
+          $(".loader").show();
+          setTimeout(function(){
+            $(".loginbox").fadeOut('fast');
+            $(".loader").hide();
+            $(".nav").show();
+            $("#zamani").fadeIn('slow');
+
+          }, 5000);
+        }
+
+        else{
+          $(".danger").show();
+        }
+      });
+
+      $(".mapbtn").click(function(){
+
+          $(".map").toggle();
+
+        });
+
+    </script>
+  </body>
 </html>
